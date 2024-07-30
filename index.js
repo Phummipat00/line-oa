@@ -56,21 +56,119 @@ app.post("/webhook", (req, res) => {
   function calculateCircle(agent) {
     const radius = agent.parameters.radius;
     const area = Math.PI * Math.pow(radius, 2);
-    agent.add(`พื้นที่ของวงกลมที่มีรัศมี ${radius} คือ ${area.toFixed(2)} ตารางหน่วย`);
+    //agent.add(`พื้นที่ของวงกลมที่มีรัศมี ${radius} คือ ${area.toFixed(2)} ตารางหน่วย`);
+    let flexMessage = {
+      type: "flex",
+      altText: "Flex Message",
+      contents: {
+        type: "bubble",
+        hero: {
+          type: "image",
+          url: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.trueplookpanya.com%2Fdhamma%2Fcontent%2F65401&psig=AOvVaw0uK0r2Q3kQjhL6zG-2-3lM&ust=1722406175772000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCKjujeaLzocDFQAAAAAdAAAAABAE",
+          size: "full",
+          aspectRatio: "20:13",
+          aspectMode: "cover",
+          action: {
+            type: "uri",
+            uri: "https://line.me/",
+          },
+        },
+        body: {
+          type: "box",
+          layout: "vertical",
+          contents: [
+            {
+              type: "text",
+              text: `พื้นที่ของวงกลมที่มีรัศมี ${radius} คือ ${area.toFixed(
+                2
+              )} ตารางหน่วย`,
+              weight: "bold",
+              size: "xl",
+            },
+          ],
+        },
+      },
+    };
+    let payload = new Payload("LINE", flexMessage, { sendAsMessage: true });
+    agent.add(payload);
   }
 
   function calculateSquare(agent) {
     const width = agent.parameters.width;
     const length = agent.parameters.length;
     const area = width * length;
-    agent.add(`พื้นที่ของสี่เหลี่ยมที่มีความกว้าง ${width} และความยาว ${length} คือ ${area} ตารางหน่วย`);
+    //agent.add(`พื้นที่ของสี่เหลี่ยมที่มีความกว้าง ${width} และความยาว ${length} คือ ${area} ตารางหน่วย`);
+    let flexMessage = {
+      type: "flex",
+      altText: "Flex Message",
+      contents: {
+        type: "bubble",
+        hero: {
+          type: "image",
+          url: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.trueplookpanya.com%2Fknowledge%2Fcontent%2F65401-scimat-sci-&psig=AOvVaw3DsrrttSmRCbaIpNBHv1yc&ust=1722406287735000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCJDQ15eMzocDFQAAAAAdAAAAABAE",
+          size: "full",
+          aspectRatio: "20:13",
+          aspectMode: "cover",
+          action: {
+            type: "uri",
+            uri: "https://line.me/",
+          },
+        },
+        body: {
+          type: "box",
+          layout: "vertical",
+          contents: [
+            {
+              type: "text",
+              text: `พื้นที่ของสี่เหลี่ยมที่มีความกว้าง ${width} และความยาว ${length} คือ ${area} ตารางหน่วย`,
+              weight: "bold",
+              size: "xl",
+            },
+          ],
+        },
+      },
+    };
+    let payload = new Payload("LINE", flexMessage, { sendAsMessage: true });
+    agent.add(payload);
   }
 
   function calculateTriangle(agent) {
     const base = agent.parameters.base;
     const height = agent.parameters.height;
     const area = 0.5 * base * height;
-    agent.add(`พื้นที่ของสามเหลี่ยมที่มีฐาน ${base} และสูง ${height} คือ ${area} ตารางหน่วย`);
+    //agent.add(`พื้นที่ของสามเหลี่ยมที่มีฐาน ${base} และสูง ${height} คือ ${area} ตารางหน่วย`);
+    let flexMessage = {
+      type: "flex",
+      altText: "Flex Message",
+      contents: {
+        type: "bubble",
+        hero: {
+          type: "image",
+          url: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.trueplookpanya.com%2Fdhamma%2Fcontent%2F65401&psig=AOvVaw1QwkvlfNfyiGqeLvbc2z8B&ust=1722406374772000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCOia_cCMzocDFQAAAAAdAAAAABAE",
+          size: "full",
+          aspectRatio: "20:13",
+          aspectMode: "cover",
+          action: {
+            type: "uri",
+            uri: "https://line.me/",
+          },
+        },
+        body: {
+          type: "box",
+          layout: "vertical",
+          contents: [
+            {
+              type: "text",
+              text: `พื้นที่ของสามเหลี่ยมที่มีฐาน ${base} และสูง ${height} คือ ${area} ตารางหน่วย`,
+              weight: "bold",
+              size: "xl",
+            },
+          ],
+        },
+      },
+    };
+    let payload = new Payload("LINE", flexMessage, { sendAsMessage: true });
+    agent.add(payload);
   }
 
   let intentMap = new Map();
