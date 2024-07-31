@@ -68,7 +68,7 @@ app.post("/webhook", (req, res) => {
     const width = agent.parameters.width;
     const length = agent.parameters.length;
     const area = width * length;
-    //agent.add(`พื้นที่ของสี่เหลี่ยมที่มีความกว้าง ${width} และความยาว ${length} คือ ${area} ตารางหน่วย`);
+    agent.add(`พื้นที่ของสี่เหลี่ยมที่มีความกว้าง ${width} และความยาว ${length} คือ ${area} ตารางหน่วย`);
 
     // let payload = new Payload("LINE", flexMessage, { sendAsMessage: true });
     // agent.add(payload);
