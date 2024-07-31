@@ -84,10 +84,10 @@ app.post("/webhook", (req, res) => {
               )} ตารางหน่วย`,
               weight: "bold",
               size: "xl",
-            },
-          ],
-        },
-      },
+            }
+          ]
+        }
+      }
     };
     let payload = new Payload("LINE", flexMessage, { sendAsMessage: true });
     agent.add(payload);
