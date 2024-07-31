@@ -64,7 +64,7 @@ app.post("/webhook", (req, res) => {
         type: "bubble",
         hero: {
           type: "image",
-          url: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.trueplookpanya.com%2Fdhamma%2Fcontent%2F65401&psig=AOvVaw0uK0r2Q3kQjhL6zG-2-3lM&ust=1722406175772000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCKjujeaLzocDFQAAAAAdAAAAABAE",
+          url: "https://developers-resource.landpress.line.me/fx/img/01_1_cafe.png",
           size: "full",
           aspectRatio: "20:13",
           aspectMode: "cover",
@@ -79,15 +79,134 @@ app.post("/webhook", (req, res) => {
           contents: [
             {
               type: "text",
-              text: `พื้นที่ของวงกลมที่มีรัศมี ${radius} คือ ${area.toFixed(
-                2
-              )} ตารางหน่วย`,
+              text: "Brown Cafe",
               weight: "bold",
               size: "xl",
-            }
-          ]
-        }
-      }
+            },
+            {
+              type: "box",
+              layout: "baseline",
+              margin: "md",
+              contents: [
+                {
+                  type: "icon",
+                  size: "sm",
+                  url: "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png",
+                },
+                {
+                  type: "icon",
+                  size: "sm",
+                  url: "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png",
+                },
+                {
+                  type: "icon",
+                  size: "sm",
+                  url: "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png",
+                },
+                {
+                  type: "icon",
+                  size: "sm",
+                  url: "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png",
+                },
+                {
+                  type: "icon",
+                  size: "sm",
+                  url: "https://developers-resource.landpress.line.me/fx/img/review_gray_star_28.png",
+                },
+                {
+                  type: "text",
+                  text: "4.0",
+                  size: "sm",
+                  color: "#999999",
+                  margin: "md",
+                  flex: 0,
+                },
+              ],
+            },
+            {
+              type: "box",
+              layout: "vertical",
+              margin: "lg",
+              spacing: "sm",
+              contents: [
+                {
+                  type: "box",
+                  layout: "baseline",
+                  spacing: "sm",
+                  contents: [
+                    {
+                      type: "text",
+                      text: "Place",
+                      color: "#aaaaaa",
+                      size: "sm",
+                    },
+                    {
+                      type: "text",
+                      text: "Flex Tower, 7-7-4 Midori-ku, Tokyo",
+                      wrap: true,
+                      color: "#666666",
+                      size: "sm",
+                    },
+                  ],
+                },
+                {
+                  type: "box",
+                  layout: "baseline",
+                  spacing: "sm",
+                  contents: [
+                    {
+                      type: "text",
+                      text: "Time",
+                      color: "#aaaaaa",
+                      size: "sm",
+                    },
+                    {
+                      type: "text",
+                      text: "10:00 - 23:00",
+                      wrap: true,
+                      color: "#666666",
+                      size: "sm",
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+        footer: {
+          type: "box",
+          layout: "vertical",
+          spacing: "sm",
+          contents: [
+            {
+              type: "button",
+              style: "link",
+              height: "sm",
+              action: {
+                type: "uri",
+                label: "CALL",
+                uri: "https://line.me/",
+              },
+            },
+            {
+              type: "button",
+              style: "link",
+              height: "sm",
+              action: {
+                type: "uri",
+                label: "WEBSITE",
+                uri: "https://line.me/",
+              },
+            },
+            {
+              type: "box",
+              layout: "vertical",
+              contents: [],
+              margin: "sm",
+            },
+          ],
+        },
+      },
     };
     let payload = new Payload("LINE", flexMessage, { sendAsMessage: true });
     agent.add(payload);
